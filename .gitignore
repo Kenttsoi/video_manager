@@ -1,0 +1,9 @@
+# SQLite 資料庫
+videos.db
+
+# 虛擬環境
+v-env/
+
+# Django 快取和臨時檔案
+__pycache__/
+*.pyc
