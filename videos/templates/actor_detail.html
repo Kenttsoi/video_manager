@@ -1,0 +1,23 @@
+<!-- templates/actor_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ actor.name }}</title>
+</head>
+<body>
+    <h1>{{ actor.name }}</h1>
+    <h3>出演的影片：</h3>
+    <ul>
+        {% for video in videos %}
+            <li>
+                <a href="{% url 'video_detail' video.id %}">
+                    {{ video.code }} - {{ video.title }}
+                </a>
+            </li>
+        {% empty %}
+            <li>這位演員目前沒有影片資料。</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'video_list' %}">← 回到影片列表</a>
+</body>
+</html>

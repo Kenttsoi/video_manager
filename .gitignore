@@ -1,9 +1,21 @@
-# SQLite 資料庫
-videos.db
-
-# 虛擬環境
-v-env/
-
-# Django 快取和臨時檔案
+# Python
 __pycache__/
 *.pyc
+
+# Django
+db.sqlite3
+*.log
+*.pot
+*.py[cod]
+media/
+staticfiles/
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# Env
+.env
+.env.*
+
+v-env/

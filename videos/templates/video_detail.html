@@ -1,0 +1,23 @@
+<!-- templates/video_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ video.title }}</title>
+</head>
+<body>
+    <h1>{{ video.title }}</h1>
+    <p><strong>代碼：</strong> {{ video.code_primany }}</p>
+    <p><strong>發行商：</strong> {{ video.publisher.name }}</p>
+    <p><strong>演員：</strong>
+        {% for actor in video.actors.all %}
+            {{ actor.name }}{% if not forloop.last %}, {% endif %}
+        {% empty %}
+            無演員資料
+        {% endfor %}
+    </p>
+    <p><strong>簡介：</strong> {{ video.description }}</p>
+    <p><strong>路徑：</strong> {{ video.path }}</p>
+    <p><strong>發行時間：</strong> {{ video.release_month }}</p>
+    <a href="{% url 'video_list' %}">← 回影片列表</a>
+</body>
+</html>
